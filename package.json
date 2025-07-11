@@ -1,0 +1,26 @@
+{
+  "name": "resumefast",
+  "version": "1.0.0",
+  "description": "This website makes your job resume than faster with integrated Gemini",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "resume",
+    "AI",
+    "Gemini",
+    "AutoComplete"
+  ],
+  "author": "Leonardo Santos",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^1.7.0",
+    "dotenv": "^17.0.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "puppeteer": "^24.11.2"
+  }
+}
