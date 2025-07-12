@@ -85,10 +85,6 @@ app.post('/pdfDownload', async (req,res) => {
     //res.render('templates/template1.ejs', {session: req.session})
 })
 
-app.listen(port, ()=>{
-    console.log("Servidor aberto");
-})
-
 
 module.exports = app
 module.exports.handler = serverless(app)
