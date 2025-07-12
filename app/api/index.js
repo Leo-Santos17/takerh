@@ -1,6 +1,7 @@
 // Padrão
 const express = require("express")
 const session = require('express-session')
+const serverless = require('serverless-http')
 const app = express()
 const path = require('node:path')
 const port = 3000
@@ -87,3 +88,7 @@ app.post('/pdfDownload', async (req,res) => {
 app.listen(port, ()=>{
     console.log("Servidor aberto");
 })
+
+
+module.exports = app
+module.exports.handler = serverless(app)
