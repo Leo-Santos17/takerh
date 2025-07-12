@@ -5,15 +5,15 @@ const serverless = require('serverless-http')
 const app = express()
 const path = require('node:path')
 const port = 3000
-const gemini = require('./app/api/gemini')
-const extractTag = require('./app/api/extractTag')
-const pdf = require('./app/api/pdfGen')
-const config = require('./app/config/config')
+const gemini = require('gemini')
+const extractTag = require('extractTag')
+const pdf = require('pdfGen')
+const config = require('../config/config')
 require('dotenv').config()
 
 
 // Caminhos
-app.set('views', path.join(__dirname, 'app/views'))
+app.set('views', path.join(__dirname, '../views'))
 app.set('view engine', 'ejs');
 
 
