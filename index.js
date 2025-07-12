@@ -5,10 +5,10 @@ const serverless = require('serverless-http')
 const app = express()
 const path = require('node:path')
 const port = 3000
-const gemini = require('app/api/gemini')
-const extractTag = require('app/api/extractTag')
-const pdf = require('app/api/pdfGen')
-const config = require('app/config/config')
+const gemini = require('./app/api/gemini')
+const extractTag = require('./app/api/extractTag')
+const pdf = require('./app/api/pdfGen')
+const config = require('./app/config/config')
 require('dotenv').config()
 
 
