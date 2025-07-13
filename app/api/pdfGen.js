@@ -1,4 +1,5 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
+const chromium = require('@sparticuz/chromium')
 const fs = require('fs').promises;
 const ejs = require('ejs')
 const config = require('../config/config')
@@ -6,8 +7,22 @@ const config = require('../config/config')
 
 async function pdfGen(filename, session)
 {
+    let browser;
+
+    const launchOptions = isLocal
+      ? {
+          args: ['--no-sandbox', '--disable-setuid-sandbox'],
+          headless: true,
+        }
+      : {
+          args: [...chromium.args, '--hide-scrollbars', '--disable-web-security'],
+          defaultViewport: chromium.defaultViewport,
+          executablePath: await chromium.executablePath(),
+          headless: chromium.headless,
+          ignoreHTTPSErrors: true,
+        };
     
-    const browser = await puppeteer.launch();
+    browser = await puppeteer.launch(launchOptions);
     const page = await browser.newPage();
 
     // Carrega o template HTML
