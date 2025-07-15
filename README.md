@@ -78,6 +78,13 @@ Install dependencies using:
 npm install express @google/generative-ai dotenv ejs express-session puppeteer
 ```
 
+OBS: If it's work on localhost, remove the comment in index.js:
+```javascript
+app.listen(port, ()=>{
+   console.log("Server opening. PORT",port);
+})
+```
+
 ## Contributing
 Contributions are welcome! Please follow these steps:
 1. Fork the repository.
